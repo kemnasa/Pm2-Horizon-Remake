@@ -1,5 +1,5 @@
 /**
- * Copyright 2013 the PM2 project authors. All rights reserved.
+ * Copyright 2013-2022 the PM2 project authors. All rights reserved.
  * Use of this source code is governed by a license that
  * can be found in the LICENSE file.
  */
@@ -1498,8 +1498,6 @@ API.prototype.speedList = function(code) {
     }
 
     if (that.Client.daemon_mode == false) {
-      Common.printOut('[--no-daemon] Continue to stream logs');
-      Common.printOut('[--no-daemon] Exit on target PM2 exit pid=' + fs.readFileSync(conf.PM2_PID_FILE_PATH).toString());
       global._auto_exit = true;
       return that.streamLogs('all', 0, false, 'HH:mm:ss', false);
     }
